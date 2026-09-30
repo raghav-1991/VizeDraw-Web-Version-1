@@ -1,0 +1,129 @@
+/* VizeDraw design tokens — the single source for colour, type and spacing.
+   Palette: a deep indigo-blue primary (#111184) used on every page, a neutral
+   grey secondary scale, and white / light-grey surfaces. Each carries a 70%
+   tint for softer use. Colour outside these is kept for status only —
+   errors and redlines, pending, approved. Light only. */
+:root {
+  color-scheme: light;
+
+  /* ---------- Palette ---------- */
+  /* Primary — #111184 */
+  --primary: #111184;
+  --primary-hover: #0c0c63;
+  --primary-70: #5858a9;     /* 70% primary on white */
+  --primary-soft: #e8e8f4;
+  --on-primary: #ffffff;
+
+  /* Secondary — neutral greys */
+  --grey-25: #fcfcfd;
+  --grey-50: #f8f9fb;
+  --grey-100: #f1f3f6;
+  --grey-200: #e4e7ec;
+  --grey-300: #d0d5dd;
+  --grey-400: #98a2b3;
+  --grey-500: #667085;
+  --grey-600: #475467;
+  --grey-700: #344054;
+  --grey-800: #1d2939;
+  --grey-900: #101828;
+  --grey-70: #585d68;        /* 70% grey-900 on white — secondary text */
+
+  /* Status only */
+  --coral: #d9534f;          /* redlines, changes, errors */
+  --coral-ink: #b42318;
+  --coral-soft: #fdecea;
+  --amber: #e0a030;          /* pending, in review */
+  --amber-ink: #8a5a0b;
+  --amber-soft: #fcf3e1;
+  --green: #2e9d6a;          /* approved, synced, done */
+  --green-ink: #1f6f4a;
+  --green-soft: #e5f4ec;
+
+  /* ---------- Surfaces — white through light grey ---------- */
+  --paper: #f5f6f8;          /* page */
+  --paper-raised: #ffffff;   /* sheets, panels */
+  --paper-sunk: var(--grey-100);
+  --stone: var(--grey-200);
+  --stone-2: var(--grey-300);
+  --night: var(--grey-100);  /* legacy alias: former dark bands now sit on grey */
+  --night-raised: #ffffff;
+
+  /* Type */
+  --ink: var(--primary);
+  --ink-2: var(--grey-700);
+  --ink-3: var(--grey-70);
+  --ink-4: var(--grey-400);
+  --on-night: var(--ink);
+  --on-night-2: var(--ink-2);
+
+  /* Precision rules */
+  --rule: var(--grey-200);
+  --rule-strong: var(--grey-300);
+  --rule-ink: var(--primary);
+  --rule-night: var(--rule);
+  --metal: var(--grey-400);  /* brushed metal, used for fine instrument details */
+
+  /* Signal accent — CTAs, active states, measurements */
+  --accent: var(--primary);
+  --accent-ink: var(--primary-70);
+  --accent-soft: var(--primary-soft);
+  --accent-wash: rgba(17, 17, 132, 0.05);
+
+  /* Semantic */
+  --revision: var(--accent);
+  --revision-soft: var(--accent-soft);
+  --redline: var(--coral);
+  --redline-soft: var(--coral-soft);
+  --pending: var(--amber-ink);
+  --pending-soft: var(--amber-soft);
+  --ok: var(--green-ink);
+  --ok-soft: var(--green-soft);
+  --info: var(--grey-600);
+  --info-soft: var(--grey-100);
+
+  /* Type — SF Pro everywhere. SF Pro can't be web-hosted (Apple licence), so
+     it comes from the system on Apple devices; other platforms fall back to
+     their native UI sans. The italic accent uses SF Pro italic, and the
+     technical labels use SF Mono. */
+  --font-sf: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'SF Pro', 'Helvetica Neue', 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display: var(--font-sf);
+  --font-body: var(--font-sf);
+  --font-serif: var(--font-sf);
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, 'Cascadia Mono', Consolas, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.4rem;
+  --text-2xl: clamp(1.7rem, 1.3rem + 1.3vw, 2.4rem);
+  /* Sized for SF Pro, which sets wider than the old condensed display face. */
+  --text-3xl: clamp(2rem, 1.35rem + 2.2vw, 3.1rem);
+  --text-4xl: clamp(2.4rem, 1.3rem + 3.6vw, 4.4rem);
+  --text-display: clamp(2.5rem, 1rem + 4.2vw, 5rem);
+
+  --measure: 66ch;
+  --measure-narrow: 50ch;
+
+  /* Space */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+  --s-9: 6rem;
+  --section-y: clamp(4.5rem, 3rem + 5vw, 8rem);
+
+  --container: 1320px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --header-h: 68px;
+
+  --radius: 2px;
+  --shadow-sheet: 0 1px 0 rgba(29, 31, 33, 0.04), 0 18px 40px -22px rgba(52, 44, 30, 0.28);
+  --shadow-table: 0 1px 0 rgba(29, 31, 33, 0.05), 0 40px 80px -40px rgba(52, 44, 30, 0.35);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-precise: cubic-bezier(0.65, 0, 0.35, 1);
+}

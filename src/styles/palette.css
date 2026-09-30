@@ -1,0 +1,26 @@
+/* Palette accents, loaded last. Primary #111184 on every page, neutral grey
+   secondary, white and light-grey surfaces, with 70% tints of each (see
+   tokens.css). Hue beyond these appears only for status. */
+
+/* Hero: the middle line steps from the primary into its 70% tint and grey. */
+.home-hero__line--soft {
+  background: linear-gradient(100deg, var(--primary) 0%, var(--primary-70) 55%, var(--grey-400) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+/* Section openers: primary zone markers. */
+.marker__name { color: var(--primary-70); }
+
+/* Engineering annotations around the hero product. */
+.annot__item .annot__k { color: var(--grey-70); }
+.annot__item::after,
+.annot__item.is-accent::after { background: var(--primary); }
+.annot__item.is-accent .annot__v { color: var(--primary); }
+
+/* Workbench: live review dot, current revision. */
+.wb__live::before { background: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+.wb__props dd.is-accent { color: var(--primary); font-weight: 600; }
